@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Recruiter - NexHireAI</title>
+    <link rel="stylesheet" href="/static/style.css">
+
+    <style>
+        .form-page {
+            width: 600px;
+            margin: 60px auto;
+        }
+
+        .form-page h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        .row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .row .form-group {
+            flex: 1;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background: #0d8f63;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="form-page">
+
+    <h1>Create Recruiter Account</h1>
+
+    <form method="POST">
+
+        <!-- Company -->
+        <div class="form-group">
+            <label>Company Name *</label>
+            <input type="text" name="company" required>
+        </div>
+
+        <!-- Name -->
+        <div class="row">
+            <div class="form-group">
+                <label>First Name *</label>
+                <input type="text" name="first_name" required>
+            </div>
+
+            <div class="form-group">
+                <label>Last Name *</label>
+                <input type="text" name="last_name" required>
+            </div>
+        </div>
+
+        <!-- Source -->
+        <div class="form-group">
+            <label>How did you hear about us?</label>
+            <select name="source">
+                <option>Select option</option>
+                <option>Google</option>
+                <option>Friend</option>
+                <option>Social Media</option>
+            </select>
+        </div>
+
+        <!-- Phone -->
+        <div class="form-group">
+            <label>Phone Number</label>
+            <input type="text" name="phone">
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="submit-btn">
+            Continue
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
