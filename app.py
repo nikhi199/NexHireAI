@@ -43,7 +43,7 @@ def get_api_jobs(search_term="SQL developer Fresher jobs in india"):
     }
 
     headers = {
-        "x-rapidapi-key": "Add your RapidAPI key here",
+        "x-rapidapi-key": "0992c53ce0msh12ea88e2f959e0ep15a3c5jsn431abc3adf40",
         "x-rapidapi-host": "jsearch.p.rapidapi.com"
     }
 
