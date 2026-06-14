@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - NexHireAI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+
+        <div class="logo">
+            NexHireAI
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/" class="nav-btn">
+                Home
+            </a>
+
+            <a href="/my_applications" class="nav-btn">
+                My Applications
+            </a>
+
+            <a href="/view_applicants" class="nav-btn">
+                Applicants
+            </a>
+
+            <a href="/profile" class="nav-btn">
+                Profile
+            </a>
+
+        </div>
+
+    </nav>
+
+    <!-- Search -->
+
+    <div class="search-section">
+
+        <h1>Find Your Dream Job</h1>
+
+        <form method="GET" action="/dashboard">
+
+            <input
+                type="text"
+                name="search"
+                placeholder="Search Jobs">
+
+            <button type="submit">
+                Search
+            </button>
+
+        </form>
+
+    </div>
+
+    <!-- Database Jobs -->
+
+    <div class="jobs-container">
+
+        <h2>📂 Jobs Posted On NexHireAI</h2>
+
+        {% for job in jobs %}
+
+        <div class="job-card">
+
+            <h3>{{ job[1] }}</h3>
+
+            <p>
+                <strong>Company:</strong>
+                {{ job[2] }}
+            </p>
+
+            <p>
+                <strong>Location:</strong>
+                {{ job[3] }}
+            </p>
+
+            <p>
+                <strong>Skills:</strong>
+                {{ job[4] }}
+            </p>
+
+            <p>
+                <strong>Salary:</strong>
+                {{ job[5] }}
+            </p>
+
+            <p>
+                <strong>Description:</strong>
+                {{ job[6] }}
+            </p>
+
+            <a href="/apply/{{ job[0] }}"
+               class="apply-btn">
+
+                Apply Now
+
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+    <hr>
+
+    <!-- API Jobs -->
+
+    <div class="jobs-container">
+
+        <h2>🌐 Live Jobs From JSearch API</h2>
+
+        {% for job in api_jobs %}
+
+        <div class="job-card">
+
+            <h3>{{ job['job_title'] }}</h3>
+
+            <p>
+                <strong>Company:</strong>
+                {{ job['employer_name'] }}
+            </p>
+
+            <p>
+                <strong>Location:</strong>
+                {{ job['job_city'] }}
+            </p>
+
+            <p>
+                <strong>Job Type:</strong>
+                {{ job['job_employment_type'] }}
+            </p>
+
+            <a href="{{ job['job_apply_link'] }}"
+               target="_blank"
+               class="apply-btn">
+
+               Apply On Company Website
+
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</body>
+</html>

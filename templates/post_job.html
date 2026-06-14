@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Post Job - NexHireAI</title>
+    <link rel="stylesheet" href="/static/dashboard.css">
+</head>
+<body>
+
+<div class="form-container">
+
+    <h2>Post New Job</h2>
+
+    <form method="POST">
+
+        <input type="text"
+               name="title"
+               placeholder="Job Title"
+               required>
+
+        <input type="text"
+               name="company"
+               placeholder="Company Name"
+               required>
+
+        <input type="text"
+               name="location"
+               placeholder="Location"
+               required>
+
+         <input type="text"
+       name="skills_required"
+       placeholder="Skills Required"
+       required>      
+
+        <input type="text"
+               name="salary"
+               placeholder="Salary">
+
+        <textarea
+                name="description"
+                placeholder="Job Description"
+                rows="5"></textarea>
+
+        <button type="submit">
+            Post Job
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

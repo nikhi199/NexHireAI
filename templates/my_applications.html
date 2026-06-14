@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Applications</title>
+    <link rel="stylesheet" href="/static/dashboard.css">
+</head>
+<body>
+
+<div class="navbar">
+
+    <div class="logo">
+        NexHireAI
+    </div>
+
+    <div>
+        <a href="/dashboard" class="nav-btn">
+            Dashboard
+        </a>
+    </div>
+
+</div>
+
+<div class="jobs-container">
+
+    <h2>My Applications</h2>
+
+    {% for app in applications %}
+
+    <div class="job-card">
+
+        <h3>{{ app.title }}</h3>
+
+        <p>
+            <strong>Company:</strong>
+            {{ app.company }}
+        </p>
+
+        <p>
+            <strong>Location:</strong>
+            {{ app.location }}
+        </p>
+
+        <p>
+            <strong>Status:</strong>
+            {{ app.status }}
+        </p>
+
+        <p>
+            <strong>Applied On:</strong>
+            {{ app.apply_date }}
+        </p>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+</body>
+</html>

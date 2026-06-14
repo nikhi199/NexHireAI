@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Users</title>
+    <link rel="stylesheet" href="/static/dashboard.css">
+</head>
+<body>
+
+<div class="navbar">
+
+    <div class="logo">
+        NexHireAI
+    </div>
+
+</div>
+
+<div class="jobs-container">
+
+    <h2>Users From API</h2>
+
+    {% for user in users %}
+
+    <div class="job-card">
+
+        <h3>{{ user.name }}</h3>
+
+        <p>
+            <strong>Email:</strong>
+            {{ user.email }}
+        </p>
+
+        <p>
+            <strong>Username:</strong>
+            {{ user.username }}
+        </p>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Applicants</title>
+    <link rel="stylesheet" href="/static/dashboard.css">
+</head>
+<body>
+
+<div class="navbar">
+
+    <div class="logo">
+        NexHireAI
+    </div>
+
+    <div>
+        <a href="/dashboard" class="nav-btn">
+            Dashboard
+        </a>
+    </div>
+
+</div>
+
+<div class="jobs-container">
+
+    <h2>Applicants</h2>
+
+    {% for applicant in applicants %}
+
+    <div class="job-card">
+
+        <h3>{{ applicant[2] }}</h3>
+
+        <p>
+            <strong>Name:</strong>
+            {{ applicant[0] }}
+        </p>
+
+        <p>
+            <strong>Skills:</strong>
+            {{ applicant[1] }}
+        </p>
+
+        <p>
+            <strong>Status:</strong>
+            {{ applicant[3] }}
+        </p>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+</body>
+</html>

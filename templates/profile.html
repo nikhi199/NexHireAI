@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>My Profile - NexHireAI</title>
+
+    <link rel="stylesheet"
+          href="/static/dashboard.css">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+
+        <div class="logo">
+            NexHireAI
+        </div>
+
+        <div>
+            <a href="/dashboard" class="nav-btn">
+                Dashboard
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Profile Card -->
+    <div class="profile-card">
+
+        <h2>My Profile</h2>
+
+        <p>
+            <strong>Name:</strong>
+            {{ user.name }}
+        </p>
+
+        <p>
+            <strong>Email:</strong>
+            {{ user.email }}
+        </p>
+
+        <form method="POST">
+
+            <label>Skills</label>
+
+            <input
+                type="text"
+                name="skills"
+                value="{{ user.skills or '' }}"
+                placeholder="Enter Skills">
+
+            <label>Education</label>
+
+            <input
+                type="text"
+                name="education"
+                value="{{ user.Education or '' }}"
+                placeholder="Enter Education">
+
+            <label>Experience</label>
+
+            <input
+                type="text"
+                name="experience"
+                value="{{ user.Experience or '' }}"
+                placeholder="Enter Experience">
+
+            <button type="submit">
+                Save Profile
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
